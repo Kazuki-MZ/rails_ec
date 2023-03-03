@@ -5,16 +5,5 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
 
-  def show; end
-
-  def create
-    @item = Item.new(item_params)
-    @item.save!
-  end
-
-  private
-
-  def item_params
-    params.require(:item).permit(:name, :price, :image_name, :stock)
-  end
+ 
 end

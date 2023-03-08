@@ -4,10 +4,14 @@
       <% @items.each do |item| %>
         <div class="col mb-5">
           <div class="card h-100">
-            <%= image_tag (item.image_name) %>
+            <%= link_to item_path(item) do %>
+              <%= image_tag item.image_name, class:"card-img-top" %>
+            <% end %>
             <div class="card-body p-4">
               <div class="text-center">
-                <h5 class="fw-bolder"><%= item.name %></h5>
+                <%= link_to item_path(item) do %>
+                  <h5 class="fw-bolder"><%= item.name %></h5>
+                <% end %>
                 <%= item.price %>円
               </div>
             </div>

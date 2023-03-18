@@ -4,7 +4,7 @@ class CartItemsController < ApplicationController
   before_action :set_cart_item, only: %i[destroy]
 
   def create
-    cart_item = current_cart.cart_items.find_by!(item_id: params[:item_id])
+    cart_item = current_cart.cart_items.find_by(item_id: params[:item_id])
     if cart_item
       cart_item.quantity = cart_item.quantity.to_i + params[:quantity].to_i
       cart_item.save!

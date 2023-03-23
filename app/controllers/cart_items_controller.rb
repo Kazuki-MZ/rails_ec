@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class CartItemsController < ApplicationController
-# rubocop:disable all
   def create
     cart_item = current_cart.cart_items.find_by(item_id: params[:item_id])
     if cart_item
@@ -12,11 +11,10 @@ class CartItemsController < ApplicationController
     end
     redirect_to item_cart_items_path
   end
-# rubocop:disable all
+
   def destroy
     my_cart_item = current_cart.cart_items.find(params[:id])
     my_cart_item.destroy
     redirect_to request.referer
   end
-
 end

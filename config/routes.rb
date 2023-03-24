@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :items, only: %i[index show] do
     resources :cart_items, only: %i[index create]
   end
-  delete '/cart_items/:id', to: 'cart_items#destroy', as: 'cart_items'
+  resources :cart_items, only: :destroy
 end

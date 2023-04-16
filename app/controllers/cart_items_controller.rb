@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class CartItemsController < ApplicationController
+  def index
+    @order = Order.new
+  end
+
   def create
     cart_item = current_cart.cart_items.find_by(item_id: params[:item_id])
     if cart_item

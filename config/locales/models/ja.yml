@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    model:
+      order: 注文
+    attributes:
+      order:
+        first_name: 名字
+        last_name: 名前
+        user_name: ユーザーネーム
+        email: メールアドレス
+        address1: 住所1
+        address2: 住所2
+        country: 国名
+        state: 都道府県
+        zip: 郵便番号
+        card_name: クレジットカードに記載されている名前
+        card_number: クレジットカードナンバー
+        card_expiration: 有効期限
+        card_cvv: セキュリティーコード

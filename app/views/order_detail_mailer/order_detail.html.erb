@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= @order.user_name %>様。ご購入ありがとうございます</h1>
+    <p>
+      購入された商品は<br>
+      <% @cart_items.each do |cart_item| %>
+        <%= cart_item.item.name %>数量:<%= cart_item.quantity %>個<br>
+      <% end %>
+    </p>
+    <p>配送先住所は<br>
+      <%= @order.address1 %><br>
+      <%= @order.address2 %>です。
+    </p>
+  </body>
+</html>

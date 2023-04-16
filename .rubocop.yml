@@ -10,3 +10,5 @@ MethodLength:
   Max: 16
 Layout/LineLength:
   Max: 125
+Metrics/BlockLength:
+  Max: 30

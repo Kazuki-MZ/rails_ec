@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_25_095452) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_11_142038) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_25_095452) do
     t.integer "quantity", null: false
     t.bigint "item_id", null: false
     t.bigint "cart_id", null: false
-    t.bigint "order_id", null: false
+    t.bigint "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cart_id"], name: "index_cart_items_on_cart_id"
@@ -41,7 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_25_095452) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string "firs_tname", null: false
+    t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "user_name", null: false
     t.string "email", null: false
@@ -51,7 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_25_095452) do
     t.string "state", null: false
     t.integer "zip", null: false
     t.string "card_name", null: false
-    t.integer "card_number", null: false
+    t.bigint "card_number", null: false
     t.integer "card_expiration", null: false
     t.integer "card_cvv", null: false
     t.datetime "created_at", null: false

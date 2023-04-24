@@ -5,14 +5,15 @@
   <body>
     <h1><%= @order.user_name %>様。ご購入ありがとうございます</h1>
     <p>
-      購入された商品は<br>
+      購入された商品<br>
       <% @cart_items.each do |cart_item| %>
         <%= cart_item.item.name %>数量:<%= cart_item.quantity %>個<br>
-        <%= cart_item.cart.total_amount %>円
+      合計金額<%= cart_item.cart.total_amount %>円
       <% end %>
     </p>
-    <p>配送先住所は<br>
-      <%= @order.address1 %><br>
+    <p>配送先住所<br>
+      <%= @order.state %><br>
+      <%= @order.zip %><%= @order.address1 %><br>
       <%= @order.address2 %>です。
     </p>
   </body>

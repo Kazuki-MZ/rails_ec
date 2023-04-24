@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     resources :cart_items, only: %i[index create]
   end
   resources :cart_items, only: :destroy
-  resources :orders, only: :create
+  resources :orders, only: %i[create new]
 end

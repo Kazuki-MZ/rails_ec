@@ -2,15 +2,20 @@
 
 class OrdersController < ApplicationController
   before_action :set_cart_items, only: [:create]
+
+  def new
+    @order = Order.new
+  end
+
   def create
     @order = Order.new(order_params)
     if @order.save
       current_cart.cart_items.each { |cart_item| cart_item.update(order_id: @order.id) }
       OrderDetailMailer.with(order: @order, cart_items: @cart_items).order_detail.deliver_now
-      reset session
+      reset_session
       redirect_to items_path, success: '購入ありがとうございます'
     else
-      render template: 'cart_items/index', status: :unprocessable_entity
+      render 'new', status: :unprocessable_entity
     end
   end
 

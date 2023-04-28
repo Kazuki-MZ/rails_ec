@@ -12,6 +12,11 @@
   </head>
 
   <body>
+    <% flash.each do |key, msg| %>
+      <div class="alert alert-<%= key %>">
+        <%= msg %>
+      </div>
+    <% end %>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container px-4 px-lg-5">
         <button
@@ -54,7 +59,7 @@
             <button class="btn btn-outline-dark" type="submit">
               <i class="bi-cart-fill me-1"></i>
               Cart
-              <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+              <span class="badge bg-dark text-white ms-1 rounded-pill"><%= current_cart.total_quantity %></span>
             </button>
           </form>
         </div>

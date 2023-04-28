@@ -1,0 +1,7 @@
+<%= @order.user_name %>様
+ご購入ありがとうございます。
+  購入された商品は
+      <% @cart_items.each do |cart_item| %>
+        <%= cart_item.item.name %> 数量:<%= cart_item.quantity %>個です。
+      <% end %>
+  配送先住所は<%= @order.address1%><%= @order.address2%>です。

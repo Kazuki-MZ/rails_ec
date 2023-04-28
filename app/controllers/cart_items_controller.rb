@@ -9,7 +9,7 @@ class CartItemsController < ApplicationController
     else
       current_cart.cart_items.build(item_id: params[:item_id], quantity: params[:quantity]).save!
     end
-    redirect_to item_cart_items_path
+    redirect_to new_order_path
   end
 
   def destroy

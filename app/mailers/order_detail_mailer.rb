@@ -5,6 +5,8 @@ class OrderDetailMailer < ApplicationMailer
   def order_detail
     @order = params[:order]
     @cart_items = params[:cart_items]
+    @promotion_code = params[:promotion_code]
+    @total_amount = params[:total_amount]
     mail(
       subject: 'ご購入ありがとうございます',
       to: @order.email

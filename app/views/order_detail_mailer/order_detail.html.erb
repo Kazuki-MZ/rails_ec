@@ -10,7 +10,7 @@
         <%= cart_item.item.name %>数量:<%= cart_item.quantity %>個<br>
       <% end %>
       <% if @promotion_code %>
-        割引額:<%= @promotion_code.discount_amount %>円<br>
+        プロモーションコード使用:-<%= @promotion_code.discount_amount %>円<br>
       <% end %>
       合計金額:<%= @total_amount %>円
     </p>

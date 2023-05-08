@@ -8,8 +8,11 @@
       購入された商品<br>
       <% @cart_items.each do |cart_item| %>
         <%= cart_item.item.name %>数量:<%= cart_item.quantity %>個<br>
-      合計金額<%= cart_item.cart.total_amount %>円
       <% end %>
+      <% if @promotion_code %>
+        プロモーションコード使用:ー<%= @promotion_code.discount_amount %>円<br>
+      <% end %>
+      合計金額:<%= @total_amount %>円
     </p>
     <p>配送先住所<br>
       <%= @order.state %><br>

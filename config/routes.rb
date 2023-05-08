@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   end
   resources :cart_items, only: :destroy
   resources :orders, only: %i[create new]
+  resources :promotion_codes, only: :create
 end

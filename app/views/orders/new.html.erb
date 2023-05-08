@@ -29,29 +29,33 @@
                 </div>
               </div>
             </li>
-            <% end %> 
+            <% end %>
+            
+            <% if current_cart.promotion_code %>
+            <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
+                <div class="text-success">
+                  <h6 class="my-0">Promo code</h6>
+                </div>
+                <span class="text-success">-<%= current_cart.promotion_code.discount_amount %></span>
+              </li>
+            <% end %>
             <li class="list-group-item d-flex justify-content-between">
               <span>合計金額</span>
               <strong>
                 <%= current_cart.total_amount %>円
               </strong>
             </li>
+  
+              <%= form_with scope: :promotion_code, url: promotion_codes_path do |f| %>
+              <%= f.text_field :code_name, class: "form-control" %>
+              <%= f.submit 'プロモーションコード適応', class: "btn btn-secondary btn-sm" %>
+              <% end %>
           </ul>
-
         </div>
         <div class="col-md-7 col-lg-8">
           <h4 class="mb-3">請求先住所</h4>
             <%= form_with model:@order, url: orders_path, method: :post do |f| %>
-              <% if @order.errors.any? %>
-                <div class = "alert alert-warning">
-                  <ul>
-                    <% @order.errors.full_messages.each do |message| %>
-                      <li><%= message %></li>
-                    <% end %>
-                  </ul>
-                </div>
-              <% end %>
-            
+              <%= render 'layouts/error_messages', model: @order %>
               <div class="row g-3">
                 <div class="col-sm-6">
                   <div class="form-group"> 

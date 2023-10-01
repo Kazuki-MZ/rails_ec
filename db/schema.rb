@@ -63,8 +63,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_05_122206) do
     t.integer "discount_amount", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "cart_id"
-    t.index ["cart_id"], name: "index_promotion_codes_on_cart_id"
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -78,5 +76,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_05_122206) do
   add_foreign_key "cart_items", "carts"
   add_foreign_key "cart_items", "items"
   add_foreign_key "cart_items", "orders"
-  add_foreign_key "promotion_codes", "carts"
 end

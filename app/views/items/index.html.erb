@@ -4,12 +4,12 @@
       <% @items.each do |item| %>
         <div class="col mb-5">
           <div class="card h-100">
-            <%= link_to item_path(item) do %>
+            <%= link_to item_path(item)do %>
               <%= image_tag item.image_name, class:"card-img-top" %>
             <% end %>
             <div class="card-body p-4">
               <div class="text-center">
-                <%= link_to item_path(item) do %>
+                <%= link_to item_path(item), style: "text-decoration: none; color: black;"  do %>
                   <h5 class="fw-bolder"><%= item.name %></h5>
                 <% end %>
                 <%= item.price %>円
@@ -19,7 +19,7 @@
               <div class="text-center">
                 <%= form_with url: item_cart_items_path(item), method: :post do |f| %>
                 <%= f.hidden_field :quantity, value: 1 %>
-                <%= f.submit "Add to Cart", class:"btn btn-outline-dark flex-shrink-0"  %>
+                <%= f.submit "カートに追加", class:"btn btn-outline-dark flex-shrink-0"  %>
                 <% end %>
               </div>
             </div>

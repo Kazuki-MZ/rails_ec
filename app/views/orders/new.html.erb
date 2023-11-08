@@ -46,9 +46,9 @@
               </strong>
             </li>
   
-              <%= form_with scope: :promotion_code, url: promotion_codes_path do |f| %>
+              <%= form_with scope: :promotion_code, url: promotion_codes_path, class: "mt-3" do |f| %>
               <%= f.text_field :code_name, class: "form-control" %>
-              <%= f.submit 'プロモーションコード適応', class: "btn btn-secondary btn-sm" %>
+              <%= f.submit 'プロモーションコード適応', class: "btn btn-secondary btn-sm mt-2" %>
               <% end %>
           </ul>
         </div>

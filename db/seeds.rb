@@ -3,46 +3,53 @@
 Item.create!(
   [
     {
-      name: 'sample1',
-      price: 1000,
-      image_name: 'sample.jpg',
-      stock: 10
+      name: 'スウェット',
+      price: 2000,
+      image_name: 'blue_sweat.jpg',
+      stock: 10,
+      context: "落ち着いた深みのある青色で、どんなシーンにも合わせやすいスウェットです。"
     },
     {
-      name: 'sample2',
-      price: 1000,
-      image_name: 'sample.jpg',
-      stock: 20
+      name: 'レザージャケット',
+      price: 4000,
+      image_name: 'leather_jacket.jpg',
+      stock: 20,
+      context: "高品質の本革を使用し、時間が経つほどに増す風合いが魅力のレザージャケットです。"
     },
     {
-      name: 'sample3',
-      price: 1000,
-      image_name: 'sample.jpg',
-      stock: 30
+      name: 'デニム・ジーンズ',
+      price: 3000,
+      image_name: 'jeans.jpg',
+      stock: 30,
+      context: "高品質のデニム生地を使用し、耐久性に優れているため長くご愛用いただけます。"
     },
     {
-      name: 'sample4',
-      price: 1000,
-      image_name: 'sample.jpg',
-      stock: 40
+      name: 'パーカー',
+      price: 1500,
+      image_name: 'white_hoodie.jpg',
+      stock: 40,
+      context: "中厚手の生地で、肌寒い日には一枚で、寒い日にはアウターの下にも着用可能です。"
     },
     {
-      name: 'sample5',
-      price: 1000,
-      image_name: 'sample.jpg',
-      stock: 50
+      name: 'スキニーパンツ',
+      price: 2500,
+      image_name: 'black_skinny.jpg',
+      stock: 50,
+      context: "伸縮性のある素材を使用しており、見た目の美しさと動きやすさを兼ね備えています。"
     },
     {
-      name: 'sample6',
-      price: 1000,
-      image_name: 'sample.jpg',
-      stock: 60
+      name: 'カーディガン',
+      price: 2500,
+      image_name: 'cardigan.jpg',
+      stock: 60,
+      context: "どんな季節にも対応する快適な着心地のカーディガン。高品質の素材を選び抜き、肌に優しく柔らかい着用感を実現しました。"
     },
     {
-      name: 'sample7',
+      name: '麦わら帽子',
       price: 1000,
-      image_name: 'sample.jpg',
-      stock: 70
+      image_name: 'straw_hat.jpg',
+      stock: 70,
+      context: "自然素材の魅力を活かしたこの帽子は、通気性に優れたデザインで涼しさを保ちつつ、しっかりと日差しから顔を守ります。"
     }
   ]
 )
